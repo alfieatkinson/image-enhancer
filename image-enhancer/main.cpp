@@ -136,9 +136,9 @@ int choose_bins() {
 		std::cout << "How many bins?" << std::endl;
 
 		// Print powers of 2 up to 256 as a list
-		for (int i = 1; i <= 256; i *= 2) {
+		for (int i = 2; i <= 256; i *= 2) {
 			int index = std::log2(i);
-			std::cout << index + 1 << ". " << i << std::endl;
+			std::cout << index << ". " << i << std::endl;
 		}
 
 		std::cin >> choice;
@@ -146,7 +146,7 @@ int choose_bins() {
 		// Check that the user input is an integer within the accepted bounds
 		try {
 			nchoice = stoi(choice);
-			if ((nchoice >= 1) && (nchoice <= 9)) {
+			if ((nchoice >= 1) && (nchoice <= 8)) {
 				nbins = pow(2, nchoice);
 				loop = false;
 			}
